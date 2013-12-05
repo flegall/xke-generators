@@ -2,11 +2,11 @@
 
 // Exercice 1 : 
 // Transformer la fonction fibonacci() en générateur afin de pouvoir l'appeler comme ceci : 
-//  for (n of fibonacci()) {
-//      console.log(n);        
-//  }
+ for (n of fibonacci()) {
+     console.log(n);        
+ }
 
-function fibonacci() {
+function* fibonacci() {
     var prev = 0;
     var curr = 1;
     for (;;) {
@@ -15,9 +15,8 @@ function fibonacci() {
         if (sum > 1000) {
             return;
         }
-        console.log(sum);
+        yield sum;
         prev = curr;
         curr = sum;
     }
 }
-fibonacci();
